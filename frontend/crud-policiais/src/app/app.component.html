@@ -1,1 +1,14 @@
-<router-outlet />
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/cadastro" routerLinkActive="active" ariaCurrentWhenActive="page">Cadastro</a>
+    </li>
+    <li>
+      <a routerLink="/listagem" routerLinkActive="active" ariaCurrentWhenActive="page">Listagem</a>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

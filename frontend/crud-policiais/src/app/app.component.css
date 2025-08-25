@@ -1,0 +1,34 @@
+nav {
+  background-color: #333;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+
+nav a.active {
+  background-color: #007bff;
+}
+
+main {
+  padding: 2rem;
+}
