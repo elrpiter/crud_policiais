@@ -1,0 +1,46 @@
+.list-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.policial-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.policial-table th,
+.policial-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.policial-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.message {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.loading {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.error {
+  background-color: #fbe9e7;
+  color: #c62828;
+}
+
+.no-data {
+  background-color: #fffde7;
+  color: #f9a825;
+}

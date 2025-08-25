@@ -1,1 +1,29 @@
-<p>policial-list works!</p>
+<div class="list-container">
+  <h2>Lista de Policiais Cadastrados</h2>
+
+  <div *ngIf="loading" class="message loading">Carregando dados...</div>
+  <div *ngIf="errorMessage" class="message error">{{ errorMessage }}</div>
+
+  <table *ngIf="policiais.length > 0 && !loading" class="policial-table">
+    <thead>
+      <tr>
+        <th>RG Civil</th>
+        <th>RG Militar</th>
+        <th>CPF</th>
+        <th>Data de Nasc.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let policial of policiais">
+        <td>{{ policial.rg_civil }}</td>
+        <td>{{ policial.rg_militar }}</td>
+        <td>{{ policial.cpf }}</td>
+        <td>{{ policial.data_nascimento | date: 'dd/MM/yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="policiais.length === 0 && !loading && !errorMessage" class="message no-data">
+    Nenhum policial cadastrado.
+  </div>
+</div>
