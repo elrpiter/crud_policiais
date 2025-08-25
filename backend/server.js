@@ -75,6 +75,35 @@ app.post('/policiais', async (req, res) => {
     }
 });
 
+app.get('/policiais', async (req, res) => {
+    try {
+        const { cpf, rg } = req.query;
+
+        let sql = 'SELECT id, rg_civil, rg_militar, cpf, data_nascimento FROM policiais';
+        const values = [];
+
+        if (cpf || rg) {
+            sql += ' WHERE ';
+            if (cpf) {
+                sql += 'cpf = ?';
+                values.push(cpf);
+            } else if (rg) {
+                sql += '(rg_civil = ? OR rg_militar = ?)';
+                values.push(rg, rg);
+            }
+        }
+        
+        const [rows] = await db.execute(sql, values);
+
+        res.status(200).json(rows);
+
+    } catch (error) {
+        console.error('Erro ao listar policiais:', error);
+        res.status(500).json({ error: 'Erro interno do servidor.' });
+    }
+});
+
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
